@@ -7,6 +7,7 @@ $nav-active-color: #111;
     position: relative;
     text-align: center;
     left: 50%;
+    transform: translateX(-50%);
 }
 
 body {
@@ -71,7 +72,7 @@ ol {
 
 .center {
     @include center();
-    transform: translateX(-50%);
+    
     
 }
 
