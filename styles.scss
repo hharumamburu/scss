@@ -1,0 +1,92 @@
+$font: Helvetica, sans-serif;
+$primary-color: #f048ee;
+$nav-hover-color: #f2c1f1;
+$nav-active-color: #111;
+
+@mixin center {
+    position: relative;
+    text-align: center;
+    left: 50%;
+}
+
+body {
+    margin: 0;
+    font: 100% $font;
+}
+
+ul {
+ 
+    &.topnav {
+    list-style-type: none;
+    margin: 0 0 20px;
+    padding: 0;
+    overflow: hidden;
+    background-color: $primary-color;
+
+
+        li {
+        float: left;
+
+            a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+
+                &:hover:not(.active) {
+                    background-color: $nav-hover-color;
+                }
+
+                &.active {
+                    background-color: $nav-active-color;
+                }
+            }
+
+            &.right {
+                float: right;
+            }
+        }
+
+    }
+}
+
+ol {
+    
+    li {
+        
+        span {
+            color: $primary-color;
+            padding-left: 16px;
+        }
+    }
+}
+
+#content { padding:0 16px; }
+
+/* use a mixing for centering */
+/* https://css-tricks.com/snippets/sass/centering-mixin/ */
+
+/* Mixins normally set many properties */
+
+.center {
+    @include center();
+    transform: translateX(-50%);
+    
+}
+
+.box {
+    width: 80%;
+    border: 2px solid $primary-color;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+img { margin-bottom: 20px;}
+
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+}
